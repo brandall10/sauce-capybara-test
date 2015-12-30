@@ -18,9 +18,13 @@ auth = "#{ENV["SAUCE_USERNAME"]}:#{ENV["SAUCE_ACCESS_KEY"]}"
 # The Sauce Labs test endpoint
 url = "http://#{auth}@ondemand.saucelabs.com/wd/hub"
 
-caps = Selenium::WebDriver::Remote::Capabilities.edge
-caps['platform'] = 'Windows 10'
-caps['version'] = '20.10240'
+# caps = Selenium::WebDriver::Remote::Capabilities.edge
+# caps['platform'] = 'Windows 10'
+# caps['version'] = '20.10240'
+
+caps = Selenium::WebDriver::Remote::Capabilities.chrome()
+caps['platform'] = 'OS X 10.11'
+caps['version'] = '46.0'
 
 # Capybara lets you create custom drivers, which we're doing here.
 # We're basing it off the built-in Capybara Selenium driver.
